@@ -1,0 +1,38 @@
+﻿@model List<SET.Models.FaqViewModel>
+
+@{
+    ViewData["Title"] = "FAQ List";
+}
+
+<h2>FAQ List</h2>
+
+<a asp-action="Add" class="btn btn-success mb-3">Add New FAQ</a>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Question</th>
+            <th>Answer</th>
+            <th style="width:150px;">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var faq in Model)
+        {
+            <tr>
+                <td>@faq.FaqQuestion</td>
+                <td> @faq.FaqAnswer </td>
+                <td>
+                    <a asp-action="Update" asp-route-uniqueId="@faq.UniqueId" class="btn btn-primary btn-sm">Edit</a>
+
+                    <a asp-action="Delete"
+                       asp-route-uniqueId="@faq.UniqueId"
+                       onclick="return confirm('Are you sure you want to delete this FAQ?');"
+                       class="btn btn-danger btn-sm">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

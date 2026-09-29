@@ -1,0 +1,32 @@
+﻿@model SET.Models.FaqViewModel
+
+@{
+    ViewData["Title"] = "Add FAQ";
+}
+
+<h2>Add FAQ</h2>
+
+<form asp-action="Add" method="post">
+    @Html.AntiForgeryToken()
+
+    <div class="form-group mb-3">
+        <label asp-for="FaqQuestion" class="form-label"></label>
+        <input asp-for="FaqQuestion" class="form-control" />
+        <span asp-validation-for="FaqQuestion" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="FaqAnswer" class="form-label"></label>
+        <textarea asp-for="FaqAnswer" class="form-control" rows="4"></textarea>
+        <span asp-validation-for="FaqAnswer" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="GetAll" class="btn btn-secondary">Cancel</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
