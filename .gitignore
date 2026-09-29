@@ -1,36 +1,36 @@
 ## Ignore Visual Studio & .NET temporary files, build results, and user settings
 
-# User-specific files
-*.rsuser
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
-.vs/
-
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
-x64/
-x86/
-[Aa]rm/
-[Aa]rm64/
-bld/
 [Bb]in/
 [Ob]j/
 [Lg]og/
 [Lg]ogs/
+bin/
+obj/
 
-# Visual Studio Code
+# Visual Studio & VS Code files
+.vs/
 .vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+*.rsuser
 
-# User settings
-appsettings.Development.json
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# User specific / local configs (keep standard appsettings.Development.json tracked if clean)
 appsettings.Local.json
+*.secrets.json
 
-# Packages & restore
+# NuGet / Packages
 *.nupkg
 *.snupkg
 **/packages/*
@@ -38,7 +38,3 @@ appsettings.Local.json
 project.lock.json
 project.fragment.lock.json
 artifacts/
-
-# Output directories
-bin/
-obj/
